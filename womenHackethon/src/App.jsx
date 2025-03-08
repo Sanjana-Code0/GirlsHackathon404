@@ -10,16 +10,17 @@ import RateCalculator from "./pages/RateCalculator";
 import ClientManagement from "./pages/ClientManagement";
 import SkillDevelopment from "./pages/SkillDevelopment";
 
+import GigNexusPage from "./pages/GigNexus";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<GigNexusPage />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
-        {/* <Route path="/financial-graph" element={<FinancialGraph />} /> */}
         <Route path="/financial-dashboard" element={<FinancialDashboard />} />
         <Route path="/rate-calculator" element={<RateCalculator />} />
         <Route path="/client-management" element={<ClientManagement />} />
