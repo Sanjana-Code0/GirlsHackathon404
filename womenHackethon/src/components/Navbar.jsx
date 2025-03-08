@@ -67,6 +67,12 @@ const Sidebar = () => {
               <motion.li whileHover={{ scale: 1.1 }}>
                 <a href="/products" onClick={closeSidebar}>🔑 Certification</a>
               </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }}>
+                <a href="/financial-dashboard" onClick={closeSidebar}>🔑 Financial Dashboard</a>
+              </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }}>
+                <a href="/rate-calculator" onClick={closeSidebar}>🔑 WorkingRate Calculator</a>
+              </motion.li>
             </ul>
           </motion.div>
         )}
