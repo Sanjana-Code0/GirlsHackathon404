@@ -137,17 +137,23 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="hero-section text-center py-5 bg-primary text-white">
+      <section
+        className="hero-section text-center py-5"
+        style={{
+          background: "linear-gradient(45deg, #007bff, #00aaff)",
+        }}
+      >
         <motion.h1
-          className="display-4 fw-bold"
+          className="display-4 fw-bold text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1 }}
         >
           GigNexus - Sales & Finance Analytics
         </motion.h1>
-        <p className="lead">
-          Gain deep insights into your gig economy business with our advanced analytics dashboard.
+        <p className="lead text-white">
+          Gain deep insights into your gig economy business with our advanced
+          analytics dashboard.
         </p>
       </section>
 
@@ -164,14 +170,14 @@ const Home = () => {
         <Row>
           {/* Bar Chart */}
           <Col md={6} className="mb-4">
-            <Card className="shadow p-3 rounded-4 border-0">
+            <Card className="shadow-lg p-3 rounded-4 border-0">
               <Bar data={barChartData} />
             </Card>
           </Col>
 
           {/* Line Chart */}
           <Col md={6} className="mb-4">
-            <Card className="shadow p-3 rounded-4 border-0">
+            <Card className="shadow-lg p-3 rounded-4 border-0">
               <Line data={lineChartData} />
             </Card>
           </Col>
@@ -180,14 +186,14 @@ const Home = () => {
         <Row>
           {/* Pie Chart */}
           <Col md={6} className="mb-4">
-            <Card className="shadow p-3 rounded-4 border-0">
+            <Card className="shadow-lg p-3 rounded-4 border-0">
               <Pie data={pieChartData} />
             </Card>
           </Col>
 
           {/* Doughnut Chart */}
           <Col md={6} className="mb-4">
-            <Card className="shadow p-3 rounded-4 border-0">
+            <Card className="shadow-lg p-3 rounded-4 border-0">
               <Doughnut data={doughnutChartData} />
             </Card>
           </Col>
@@ -196,25 +202,109 @@ const Home = () => {
         <Row>
           {/* Radar Chart */}
           <Col md={6} className="mb-4">
-            <Card className="shadow p-3 rounded-4 border-0">
+            <Card className="shadow-lg p-3 rounded-4 border-0">
               <Radar data={radarChartData} />
             </Card>
           </Col>
 
           {/* Scatter Chart */}
           <Col md={6} className="mb-4">
-            <Card className="shadow p-3 rounded-4 border-0">
+            <Card className="shadow-lg p-3 rounded-4 border-0">
               <Scatter data={scatterChartData} />
             </Card>
           </Col>
         </Row>
       </Container>
 
-      {/* Footer */}
-      <footer className="text-center py-4 bg-light mt-5">
+     
+
+      {/* Chatbot Integration */}
+      <div className="chatbot-container">
+        <button
+          className="chatbot-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#chatbotModal"
+        >
+          💬 Chat with us
+        </button>
+
+        {/* Chatbot Modal */}
+        <div
+          className="modal fade"
+          id="chatbotModal"
+          tabIndex="-1"
+          aria-labelledby="chatbotModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="chatbotModalLabel">
+                  Chatbot
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <div className="chatbot-box">
+                  <p>Hello! How can I assist you today?</p>
+                  {/* Add chatbot interaction or options here */}
+                  <button className="btn btn-primary">Choose Component</button>
+                  <button className="btn btn-secondary">Help & FAQ</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+      <style jsx>{`
+        .chatbot-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 999;
+        }
+
+        .chatbot-btn {
+          padding: 10px 20px;
+          background-color: #00aaff;
+          color: white;
+          border: none;
+          border-radius: 50px;
+          font-size: 18px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-btn:hover {
+          background-color: #007bff;
+        }
+
+        .chatbot-box {
+          padding: 20px;
+          background-color: #f9f9f9;
+          border-radius: 8px;
+        }
+
+        .modal-content {
+          border-radius: 10px;
+        }
+      `}</style>
+
+       {/* Footer */}
+       <footer className="text-center py-4 bg-light mt-5">
         <p className="mb-0">© 2025 GigNexus. All rights reserved.</p>
       </footer>
     </>
+
+    
   );
 };
 

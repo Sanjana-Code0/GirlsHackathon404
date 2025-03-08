@@ -132,7 +132,11 @@ const Login = () => {
           border-radius: 10px;
         }
       `}</style>
+
+      
     </div>
+
+    
   );
 };
 
