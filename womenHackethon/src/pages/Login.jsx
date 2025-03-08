@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Lottie from "react-lottie";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-
-import animationData from "../assets/animation1.json";
- // Make sure to replace with the correct path to your Lottie JSON file
+import animationData from "../assets/animation1.json"; // Ensure this path is correct
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -20,17 +18,17 @@ const Login = () => {
     }
     sessionStorage.setItem("loggedInUser", JSON.stringify(storedUser));
     alert("Login Successful");
-    navigate("/");
+    navigate("/home"); // Redirects to Home after login
   };
 
   // Lottie animation options
   const defaultOptions = {
     loop: true,
-    autoplay: true, // Animation plays automatically
-    animationData: animationData, // Import the Lottie JSON data
+    autoplay: true,
+    animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
+      preserveAspectRatio: "xMidYMid slice",
+    },
   };
 
   return (
@@ -125,11 +123,6 @@ const Login = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-        }
-
-        .image-container img {
-          max-width: 100%;
-          border-radius: 10px;
         }
       `}</style>
     </div>
