@@ -7,6 +7,9 @@ import Products from "./pages/Products";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FinancialDashboard from "./pages/FinancialDashboard";
 import RateCalculator from "./pages/RateCalculator";
+import ClientManagement from "./pages/ClientManagement";
+import SkillDevelopment from "./pages/SkillDevelopment";
+
 import GigNexusPage from "./pages/GigNexus";
 
 function App() {
@@ -20,6 +23,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/financial-dashboard" element={<FinancialDashboard />} />
         <Route path="/rate-calculator" element={<RateCalculator />} />
+        <Route path="/client-management" element={<ClientManagement />} />
+        <Route path="/skill-development" element={<SkillDevelopment />} />
       </Routes>
     </Router>
   );

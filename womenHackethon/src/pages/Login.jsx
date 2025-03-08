@@ -125,7 +125,11 @@ const Login = () => {
           align-items: center;
         }
       `}</style>
+
+      
     </div>
+
+    
   );
 };
 
