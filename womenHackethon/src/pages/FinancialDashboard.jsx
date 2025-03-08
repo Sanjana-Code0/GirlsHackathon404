@@ -196,7 +196,7 @@ const FinancialDashboard = () => {
 
         {/* Navigation */}
         <div className="d-flex justify-content-center mt-5">
-          <button onClick={() => navigate("/")} className="btn btn-secondary px-4 py-2">
+          <button onClick={() => navigate("/home")} className="btn btn-secondary px-4 py-2">
             Back to Dashboard
           </button>
         </div>

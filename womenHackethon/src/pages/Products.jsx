@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, Form, Card } from "react-bootstrap";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Products = () => {
   // State for products
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
@@ -92,6 +95,9 @@ const Products = () => {
   return (
     
     <div className="container mt-4">
+           <h2 className="text-center mb-4 animate__animated animate__fadeInDown">
+         Professional Certification
+        </h2>
       <Button variant="primary" onClick={handleAddProduct}>
         Add Certificate
       </Button>
@@ -217,6 +223,12 @@ const Products = () => {
         </Modal.Body>
       </Modal>
       
+
+      <div className="d-flex justify-content-center mt-5">
+          <button onClick={() => navigate("/home")} className="btn btn-secondary px-4 py-2">
+            Back to Dashboard
+          </button>
+        </div>
     </div>
   );
 };

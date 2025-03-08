@@ -55,31 +55,36 @@ const Sidebar = () => {
 
             {/* Navigation Links */}
             <ul>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/" onClick={closeSidebar}>🏠 Home</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/register" onClick={closeSidebar}>📝 Register</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/login" onClick={closeSidebar}>🔑 Login</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/products" onClick={closeSidebar}>🔑 Certification</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/financial-dashboard" onClick={closeSidebar}>🔑 Financial Dashboard</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/rate-calculator" onClick={closeSidebar}>🔑 WorkingRate Calculator</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/client-management" onClick={closeSidebar}>🔑 Client Management</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }}>
-                <a href="/skill-development" onClick={closeSidebar}>🔑Skill Progress</a>
-              </motion.li>
-            </ul>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/" onClick={closeSidebar}>🏠 Home</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/register" onClick={closeSidebar}>📝 Sign Up</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/login" onClick={closeSidebar}>🔑 Sign In</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/products" onClick={closeSidebar}>📜 Certifications</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/financial-dashboard" onClick={closeSidebar}>💰 Financial Dashboard</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/rate-calculator" onClick={closeSidebar}>💵 Rate Calculator</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/client-management" onClick={closeSidebar}>🤝 Client Management</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+    <a href="/skill-development" onClick={closeSidebar}>📈 Skill Development</a>
+  </motion.li>
+  <motion.li whileHover={{ scale: 1.1 }}>
+  <a href="/" onClick={closeSidebar}>🚪 Logout</a>
+</motion.li>
+
+</ul>
+
           </motion.div>
         )}
       </AnimatePresence>
