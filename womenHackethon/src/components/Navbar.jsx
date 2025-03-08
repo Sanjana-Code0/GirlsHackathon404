@@ -64,6 +64,9 @@ const Sidebar = () => {
               <motion.li whileHover={{ scale: 1.1 }}>
                 <a href="/login" onClick={closeSidebar}>🔑 Login</a>
               </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }}>
+                <a href="/products" onClick={closeSidebar}>🔑 Certification</a>
+              </motion.li>
             </ul>
           </motion.div>
         )}
