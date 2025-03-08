@@ -1,41 +1,76 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu
-
-
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import "./Navbar.css"; // Import CSS for styles
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false); // Sidebar state
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const closeSidebar = () => setIsOpen(false);
+
+  // Close sidebar when ESC key is pressed
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "Escape") closeSidebar();
+    };
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, []);
 
   return (
     <>
       {/* Sidebar Toggle Button */}
-      <button className="sidebar-toggle" onClick={toggleSidebar}>
+      <motion.button 
+        className="sidebar-toggle"
+        onClick={toggleSidebar}
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {isOpen ? <FaTimes /> : <FaBars />}
-      </button>
+      </motion.button>
 
       {/* Sidebar */}
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <h2>WomenHackethon</h2>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/register">Register</a>
-          </li>
-          <li>
-            <a href="/login">Login</a>
-          </li>
-         
-        </ul>
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="sidebar open"
+            initial={{ x: "-100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            {/* Sidebar Header */}
+            <div className="sidebar-header">
+              <h2>🚀 GigNexus</h2>
+              <FaTimes className="close-icon" onClick={closeSidebar} />
+            </div>
 
-      {/* Overlay to close sidebar when clicking outside */}
-      {isOpen && <div className="overlay" onClick={toggleSidebar}></div>}
+            {/* Profile Section (Optional) */}
+            <div className="profile-section">
+              <FaUserCircle size={50} className="profile-icon" />
+              <p>Welcome, Guest</p>
+            </div>
+
+            {/* Navigation Links */}
+            <ul>
+              <motion.li whileHover={{ scale: 1.1 }}>
+                <a href="/" onClick={closeSidebar}>🏠 Home</a>
+              </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }}>
+                <a href="/register" onClick={closeSidebar}>📝 Register</a>
+              </motion.li>
+              <motion.li whileHover={{ scale: 1.1 }}>
+                <a href="/login" onClick={closeSidebar}>🔑 Login</a>
+              </motion.li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Overlay (Dark Background) */}
+      {isOpen && <div className="overlay" onClick={closeSidebar}></div>}
     </>
   );
 };
