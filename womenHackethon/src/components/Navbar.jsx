@@ -44,7 +44,7 @@ const Sidebar = () => {
             {/* Sidebar Header */}
             <div className="sidebar-header">
               <h2>🚀 GigNexus</h2>
-              <FaTimes className="close-icon" onClick={closeSidebar} />
+              
             </div>
 
             {/* Profile Section (Optional) */}
