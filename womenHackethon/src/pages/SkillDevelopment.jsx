@@ -2,6 +2,25 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar"; // Import Navbar
 
 const SkillDevelopment = () => {
+
+    
+  const courses = [
+    { id: 1, name: "Full-Stack Web Development", link: "#" },
+    { id: 2, name: "JavaScript Advanced Concepts", link: "#" },
+    { id: 3, name: "React & Redux Masterclass", link: "#" },
+  ];
+
+  const mentors = [
+    { id: 1, name: "John Doe", expertise: "Frontend Development", contact: "john@example.com" },
+    { id: 2, name: "Jane Smith", expertise: "Full-Stack Development", contact: "jane@example.com" },
+  ];
+
+  const tips = [
+    "Stay consistent with daily coding practice.",
+    "Join online communities and open-source projects.",
+    "Build real-world projects to enhance your portfolio.",
+  ];
+
   const loadSkillsFromLocalStorage = () => {
     const storedSkills = localStorage.getItem("skills");
     return storedSkills ? JSON.parse(storedSkills) : [];
@@ -11,6 +30,8 @@ const SkillDevelopment = () => {
   const [skillName, setSkillName] = useState("");
   const [skillLevel, setSkillLevel] = useState("Beginner");
   const [skillProgress, setSkillProgress] = useState(0);
+
+  
 
   useEffect(() => {
     localStorage.setItem("skills", JSON.stringify(skills));
@@ -129,8 +150,51 @@ const SkillDevelopment = () => {
             </div>
           ))}
         </div>
+
+   {/* Mentorship */}
+   <div className="mt-5">
+        <h3 className="text-secondary fw-bold">👩‍🏫 Mentorship</h3>
+        <div className="row g-3 mt-3">
+          {mentors.map((mentor) => (
+            <div key={mentor.id} className="col-md-6">
+              <div className="card shadow-sm border-0 p-3 rounded-4">
+                <h5 className="fw-bold">{mentor.name}</h5>
+                <p className="text-muted">Expertise: {mentor.expertise}</p>
+                <a href={`mailto:${mentor.contact}`} className="btn btn-outline-primary">
+                  Contact Mentor ✉️
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Career Growth Tips */}
+      <div className="mt-5">
+        <h3 className="text-secondary fw-bold">🚀 Career Growth Tips</h3>
+        <ul className="list-group mt-3">
+          {tips.map((tip, index) => (
+            <li key={index} className="list-group-item border-0 shadow-sm rounded-3">
+              {tip}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Dashboard Button */}
+      <div className="text-center mt-5">
+        <button className="btn btn-outline-dark" onClick={() => (window.location.href = "/home")}>
+          🔙 Back to Dashboard
+        </button>
+      </div>
+
+
+
+        
       </div>
     </div>
+
+    
   );
 };
 

@@ -8,7 +8,7 @@ const GigNexusPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000); // Simulates a splash screen delay
+    setTimeout(() => setLoading(false), 5000); // Simulates a splash screen delay
   }, []);
 
   // Lottie Animation Config
@@ -25,7 +25,7 @@ const GigNexusPage = () => {
     return (
       <div style={splashScreenStyle}>
         <div style={splashContentStyle}>
-          <Lottie options={defaultOptions} height={200} width={200} />
+          <Lottie options={defaultOptions} height={500} width={500} />
           <h1 style={splashTextStyle}>GigNexus</h1>
         </div>
       </div>
